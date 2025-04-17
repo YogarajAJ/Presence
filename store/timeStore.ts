@@ -37,7 +37,7 @@ export const useTimeStore = create<TimeState>((set) => ({
         throw new Error('User not authenticated');
       }
 
-      const response = await fetch(`https://people-pilot.onrender.com/api/attendance/status?employee_id=${user.id}`);
+      const response = await fetch(`https://api.peppypresence.com/api/attendance/status?employee_id=${user.id}`);
       const data = await response.json();
       
       if (data.status === 200 && data.message === "Employee is currently clocked in") {
@@ -68,7 +68,7 @@ export const useTimeStore = create<TimeState>((set) => ({
         throw new Error('User not authenticated');
       }
 
-      const response = await fetch('https://people-pilot.onrender.com/api/attendance', {
+      const response = await fetch('https://api.peppypresence.com/api/attendance', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -111,7 +111,7 @@ export const useTimeStore = create<TimeState>((set) => ({
         throw new Error('User not authenticated');
       }
 
-      const response = await fetch('https://people-pilot.onrender.com/api/attendance', {
+      const response = await fetch('https://api.peppypresence.com/api/attendance', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

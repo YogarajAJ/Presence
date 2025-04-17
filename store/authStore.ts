@@ -18,7 +18,7 @@ export const useAuthStore = create<AuthState>((set) => ({
   user: null,
   login: async (email: string, password: string) => {
     try {
-      const response = await fetch('https://people-pilot-employee-service.onrender.com/api/employee/login', {
+      const response = await fetch('https://api.peppypresence.com/api/employee/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
