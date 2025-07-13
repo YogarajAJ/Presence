@@ -7,7 +7,7 @@ import { useAuthStore } from '../store/authStore';
 
 export default function Index() {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
-  
+  console.log("hi")
   // Redirect to the appropriate screen based on auth status
   return <Redirect href={isAuthenticated ? "/(tabs)" : "/login"} />;
 }
